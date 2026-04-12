@@ -82,3 +82,13 @@ body {
   position: absolute;
   box-shadow: 0 0 4px #00dce5;
 }
+
+.text-on-surface {
+  --tw-text-opacity: 1;
+  color: rgb(220 226 246 / var(--tw-text-opacity, 1));
+}
+
+.text-on-primary {
+  --tw-text-opacity: 1;
+  color: rgb(0 55 57 / var(--tw-text-opacity, 1));
+}

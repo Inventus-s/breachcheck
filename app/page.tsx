@@ -1,5 +1,6 @@
 "use client";
 
+import Icon from "@/components/comman/Icon";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { useState } from "react";
@@ -74,7 +75,7 @@ export default function Home() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-headline font-bold tracking-tight mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-headline font-bold tracking-tight mb-6 leading-tight text-on-surface">
             Check if your password has been{" "}
             <span className="text-gradient-cyan">exposed</span>
           </h1>
@@ -90,9 +91,7 @@ export default function Home() {
             <div className="absolute -inset-0.5 bg-linear-to-r from-primary/30 to-tertiary/30 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000" />
             <div className="relative bg-surface-container-high rounded-xl p-2 flex flex-col md:flex-row items-stretch gap-2">
               <div className="grow relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">
-                  lock
-                </span>
+                <Icon name="lock" size={24} className="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" />
                 <input
                   type="password"
                   value={password}
@@ -106,7 +105,7 @@ export default function Home() {
               <button
                 onClick={handleCheck}
                 disabled={loading || !password.trim()}
-                className="bg-linear-to-r from-primary to-on-primary-container text-on-primary px-8 py-5 rounded-lg font-bold font-headline hover:shadow-[0_0_20px_rgba(0,220,229,0.3)] transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+                className="bg-primary text-on-primary px-8 py-5 rounded-lg font-bold font-headline hover:shadow-[0_0_20px_rgba(0,220,229,0.3)] transition-all disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {loading ? "Checking..." : "Check Password"}
               </button>
@@ -162,11 +161,11 @@ export default function Home() {
           {/* Trust Pills */}
           <div className="flex flex-wrap justify-center gap-6 mt-12">
             <div className="flex items-center space-x-2 text-secondary/60 text-sm font-label">
-              <span className="material-symbols-outlined text-xs">verified_user</span>
+              <Icon name="shieldCheck" size={12} className="material-symbols-outlined text-xs" />
               <span className="uppercase tracking-widest">We never store your password</span>
             </div>
             <div className="flex items-center space-x-2 text-secondary/60 text-sm font-label">
-              <span className="material-symbols-outlined text-xs">shield</span>
+              <Icon name="shield" size={12} className="material-symbols-outlined text-xs" />
               <span className="uppercase tracking-widest">Only partial hash is sent</span>
             </div>
             <div className="flex items-center space-x-2 text-secondary/60 text-sm font-label">
