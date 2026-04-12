@@ -1,19 +1,32 @@
+// src/app/api/check-password/route.ts
+
+import { getCache, setCache } from "@/lib/cache";
+import { checkRateLimit } from "@/lib/rateLimit";
 import crypto from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
-        const password = body.password;
+        const ip = req.headers.get("x-forwarded-for") || "unknown";
 
-        if (!password) {
+        // 🚦 Rate limit
+        if (!checkRateLimit(ip)) {
             return NextResponse.json(
-                { error: "Password is required" },
+                { error: "Too many requests" },
+                { status: 429 }
+            );
+        }
+
+        const { password } = await req.json();
+
+        if (!password || password.length > 100) {
+            return NextResponse.json(
+                { error: "Invalid input" },
                 { status: 400 }
             );
         }
 
-        // Step 1: SHA-1 hash
+        // 🔐 Hash
         const hash = crypto
             .createHash("sha1")
             .update(password)
@@ -23,22 +36,25 @@ export async function POST(req: NextRequest) {
         const prefix = hash.slice(0, 5);
         const suffix = hash.slice(5);
 
-        // Step 2: Call HIBP API
-        const res = await fetch(
-            `https://api.pwnedpasswords.com/range/${prefix}`
-        );
+        // ⚡ Cache check
+        let data = getCache(prefix);
 
-        if (!res.ok) {
-            return NextResponse.json(
-                { error: "HIBP API failed" },
-                { status: 500 }
+        if (!data) {
+            const res = await fetch(
+                `https://api.pwnedpasswords.com/range/${prefix}`
             );
+
+            if (!res.ok) {
+                throw new Error("HIBP failed");
+            }
+
+            data = await res.text();
+
+            setCache(prefix, data); // store
         }
 
-        const data = await res.text();
         const lines = data.split("\n");
 
-        // Step 3: Match suffix
         for (const line of lines) {
             const [hashSuffix, count] = line.split(":");
 
@@ -50,7 +66,6 @@ export async function POST(req: NextRequest) {
             }
         }
 
-        // Not found
         return NextResponse.json({
             found: false,
             count: 0,
