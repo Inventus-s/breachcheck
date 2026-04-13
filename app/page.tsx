@@ -340,14 +340,14 @@ export default function Home() {
             {[
               {
                 num: "01",
-                icon: "terminal",
+                icon: "terminal2",
                 color: "primary",
                 title: "Hashing Locally",
                 desc: "Your password is immediately hashed using SHA-1 inside your browser. The raw text never touches our servers.",
               },
               {
                 num: "02",
-                icon: "lan",
+                icon: "sitemap",
                 color: "tertiary",
                 title: "Partial k-Anonymity",
                 desc: "We only send the first 5 characters of the hash. This prefix matches thousands of passwords, making identification impossible.",
@@ -355,7 +355,7 @@ export default function Home() {
               },
               {
                 num: "03",
-                icon: "data_check",
+                icon: "cloudDataConnection",
                 color: "primary",
                 title: "Cloud Comparison",
                 desc: "Our engine retrieves all matching suffixes from the leak database and performs a client-side comparison for a final match.",
@@ -373,9 +373,7 @@ export default function Home() {
                 <div
                   className={`w-12 h-12 bg-${step.color}/10 rounded-lg flex items-center justify-center mb-6`}
                 >
-                  <span className={`material-symbols-outlined text-${step.color}`}>
-                    {step.icon}
-                  </span>
+                  <Icon name={step.icon as IconName} className={`text-${step.color}`} /> {/* Fallback to custom icon if material symbol is not found */}
                 </div>
                 <h3 className="text-xl font-headline font-bold mb-4">
                   {step.title}

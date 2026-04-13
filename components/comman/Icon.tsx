@@ -54,6 +54,37 @@ const icons = {
             <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
         </svg>
     ),
+
+    terminal2: (
+        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-terminal-2">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M8 9l3 3l-3 3" />
+            <path d="M13 15l3 0" />
+            <path d="M3 6a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2l0 -12" />
+        </svg>
+    ),
+
+    sitemap: (
+        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-sitemap">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 17a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2l0 -2" />
+            <path d="M15 17a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2l0 -2" />
+            <path d="M9 5a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2l0 -2" />
+            <path d="M6 15v-1a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v1" />
+            <path d="M12 9l0 3" />
+        </svg>
+    ),
+
+    cloudDataConnection: (
+        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-cloud-data-connection">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M5 9.897c0 -1.714 1.46 -3.104 3.26 -3.104c.275 -1.22 1.255 -2.215 2.572 -2.611c1.317 -.397 2.77 -.134 3.811 .69c1.042 .822 1.514 2.08 1.239 3.3h.693a2.42 2.42 0 0 1 2.425 2.414a2.42 2.42 0 0 1 -2.425 2.414h-8.315c-1.8 0 -3.26 -1.39 -3.26 -3.103" />
+            <path d="M12 13v3" />
+            <path d="M10 18a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+            <path d="M14 18h7" />
+            <path d="M3 18h7" />
+        </svg>
+    ),
 } as const;
 
 interface IconProps {
