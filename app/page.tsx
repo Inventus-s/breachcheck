@@ -272,7 +272,7 @@ export default function Home() {
           </div>
 
           <div className="bg-surface-container-lowest border border-outline-variant/20 rounded-2xl overflow-hidden flex flex-col md:flex-row">
-            <div className="w-full md:w-2/5 p-10 md:p-14">
+            <div className="w-full md:w-2/5 p-10 md:p-14 border-r border-outline-variant/20">
               <h3 className="text-2xl font-headline font-bold mb-6">
                 Globally Distributed Performance
               </h3>
@@ -305,32 +305,15 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="w-full md:w-3/5 relative bg-[#060b16] min-h-100 flex items-center justify-center overflow-hidden">
+            <div className="w-full md:w-3/5 relative min-h-100 flex items-center justify-center overflow-hidden">
               {/* Stylized World Map Placeholder */}
-              <div className="absolute inset-0 opacity-20 pointer-events-none">
-                <svg
-                  className="w-full h-full"
-                  viewBox="0 0 1000 500"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M150,150 Q200,100 250,150 T350,150 T450,250 T550,200 T650,250 T750,150 T850,200"
-                    fill="none"
-                    stroke="#00dce5"
-                    strokeWidth="0.5"
-                  />
-                </svg>
+              <div className="world-map-svg-container">
+                <img
+                  alt="Stylized World Map"
+                  className="world-map-base"
+                  src="/CloudflareMap.svg"
+                />
               </div>
-
-              {/* Distributed Dots */}
-              <div className="relative w-full h-full">
-                {/* Add your map dots here or keep as static divs with Tailwind positioning */}
-                <div className="map-dot top-1/4 left-1/4" />
-                <div className="map-dot top-1/3 left-1/2" />
-                {/* ... repeat other dots as in original ... */}
-                <div className="map-dot top-1/2 left-1/2 border-2 border-primary bg-transparent scale-150" />
-              </div>
-              <div className="absolute inset-0 bg-linear-to-r from-[#060b16] via-transparent to-transparent" />
             </div>
           </div>
         </section>
