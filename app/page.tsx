@@ -221,9 +221,6 @@ export default function Home() {
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4">
                       <div className="mt-1 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                        <span className="text-primary">
-                          {item.icon}
-                        </span>
                         <Icon name={item.icon as IconName} className="text-primary" />
                       </div>
                       <div>
