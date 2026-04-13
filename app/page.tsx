@@ -169,7 +169,7 @@ export default function Home() {
               <span className="uppercase tracking-widest">Only partial hash is sent</span>
             </div>
             <div className="flex items-center space-x-2 text-secondary/60 text-sm font-label">
-              <span className="material-symbols-outlined text-xs">key</span>
+              <Icon name="key" size={12} className="material-symbols-outlined text-xs" />
               <span className="uppercase tracking-widest">End-to-end privacy</span>
             </div>
           </div>
