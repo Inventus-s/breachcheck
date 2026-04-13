@@ -214,7 +214,7 @@ export default function Home() {
                       desc: "Large-scale breaches expose millions of passwords, which are often used across multiple services.",
                     },
                     {
-                      icon: "vpn_key",
+                      icon: "key",
                       title: "Password Patterns",
                       desc: "Even when users modify passwords between sites, attackers can easily predict common patterns.",
                     },
