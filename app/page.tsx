@@ -1,6 +1,6 @@
 "use client";
 
-import Icon from "@/components/comman/Icon";
+import Icon, { IconName } from "@/components/comman/Icon";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { useState } from "react";
@@ -204,7 +204,7 @@ export default function Home() {
                 <div className="space-y-8">
                   {[
                     {
-                      icon: "security_update_warning",
+                      icon: "cloudLock",
                       title: "Credential Stuffing",
                       desc: "Attackers automate login attempts using leaked credentials from other sites, exploiting password reuse habits.",
                     },
@@ -221,9 +221,10 @@ export default function Home() {
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4">
                       <div className="mt-1 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined text-primary">
+                        <span className="text-primary">
                           {item.icon}
                         </span>
+                        <Icon name={item.icon as IconName} className="text-primary" />
                       </div>
                       <div>
                         <h4 className="font-bold text-on-surface mb-1">
