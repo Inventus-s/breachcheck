@@ -7,6 +7,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     loadingText?: string;        // ← Custom loading text
     children: React.ReactNode;   // Normal text when not loading
     className?: string;
+    px?: string;
+    py?: string;
 }
 
 export default function Button({
@@ -15,6 +17,8 @@ export default function Button({
     children,
     className = "",
     disabled,
+    px = '8',
+    py = '5',
     ...props
 }: ButtonProps) {
     return (
@@ -23,7 +27,7 @@ export default function Button({
             className={`
         bg-primary
         text-on-primary 
-        px-8 py-5 
+        ${`px-${px} py-${py}`}
         rounded-lg 
         font-bold 
         font-headline 

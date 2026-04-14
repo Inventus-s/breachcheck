@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Button from "./ui/Button";
 
 export default function Header() {
     return (
@@ -16,10 +17,9 @@ export default function Header() {
                         API Docs
                     </Link>
                 </div>
-
-                <button className="bg-linear-to-r from-primary to-on-primary-container text-on-primary px-5 py-2.5 rounded-lg font-bold font-headline">
+                <Button className="" px="5" py="2.5">
                     View API
-                </button>
+                </Button>
             </div>
         </nav>
     );
