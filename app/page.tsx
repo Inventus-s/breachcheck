@@ -4,6 +4,7 @@ import Icon, { IconName } from "@/components/comman/Icon";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import CheckPassword from "@/components/pages/home/CheckPassword";
+import SafeResult from "@/components/pages/home/SafeResult";
 import Button from "@/components/ui/Button";
 import { useState } from "react";
 
@@ -14,6 +15,7 @@ type ResultType = {
 
 export default function Home() {
   const [password, setPassword] = useState("");
+  const [checkedPassword, setCheckedPassword] = useState(true);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<ResultType | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -41,6 +43,7 @@ export default function Home() {
         throw new Error(data.error || "Something went wrong");
       }
 
+      setCheckedPassword(false);
       setResult(data);
     } catch (err: any) {
       setError(err.message || "Request failed");
@@ -78,7 +81,10 @@ export default function Home() {
           </div>
 
           {/* Check Password */}
-          <CheckPassword password={password} setPassword={setPassword} loading={loading} handleCheck={handleCheck} handleKeyDown={handleKeyDown} />
+          {checkedPassword && <CheckPassword password={password} setPassword={setPassword} loading={loading} handleCheck={handleCheck} handleKeyDown={handleKeyDown} />}
+
+          {/* Safe Result */}
+          {!checkedPassword && !result?.found && <SafeResult onCheckAnother={() => setCheckedPassword(true)} />}
 
           {/* Result Display */}
           <div className="mt-10 max-w-2xl mx-auto">
