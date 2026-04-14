@@ -418,12 +418,7 @@ export default function Home() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-start space-x-4">
                     <div className="mt-1 shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
-                      <span
-                        className="material-symbols-outlined text-xs text-primary"
-                        style={{ fontVariationSettings: "'FILL' 1" }}
-                      >
-                        check
-                      </span>
+                      <Icon name="check" size={12} className="text-primary text-xs" /> {/* Fallback to custom check icon */}
                     </div>
                     <div>
                       <p className="text-on-surface font-semibold">

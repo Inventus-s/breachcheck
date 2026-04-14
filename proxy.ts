@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export function middleware(req: Request) {
+export function proxy(req: Request) {
     if (req.url.includes("/api")) {
         const apiKey = req.headers.get("accept-encoding-x"); // custom header for API key
 
