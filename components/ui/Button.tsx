@@ -36,7 +36,7 @@ export default function Button({
         active:scale-[0.985]
         disabled:opacity-70 
         disabled:cursor-not-allowed
-        flex items-center justify-center gap-3
+        flex items-center justify-center gap-3 cursor-pointer
         ${className}
       `.trim()}
             {...props}

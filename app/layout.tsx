@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${space.variable}`}>
+    <html lang="en" className={`${inter.variable} ${space.variable} theme-scrollbar-premium`}>
       <body className="bg-background text-on-surface font-body">
         {children}
       </body>

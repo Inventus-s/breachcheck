@@ -129,3 +129,29 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Scrollbar */
+/* Premium Theme Scrollbar */
+.theme-scrollbar-premium {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(0 220 229 / 0.35) transparent;
+}
+
+.theme-scrollbar-premium::-webkit-scrollbar {
+  width: 5px;
+}
+
+.theme-scrollbar-premium::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.theme-scrollbar-premium::-webkit-scrollbar-thumb {
+  background: rgb(0 220 229 / 0.35);
+  border-radius: 9999px;
+  box-shadow: 0 0 8px rgba(0, 220, 229, 0.2);
+}
+
+.theme-scrollbar-premium::-webkit-scrollbar-thumb:hover {
+  background: rgb(0 220 229 / 0.55);
+  box-shadow: 0 0 12px rgba(0, 220, 229, 0.4);
+}
