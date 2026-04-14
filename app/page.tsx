@@ -3,6 +3,7 @@
 import Icon, { IconName } from "@/components/comman/Icon";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import CheckPassword from "@/components/pages/home/CheckPassword";
 import Button from "@/components/ui/Button";
 import { useState } from "react";
 
@@ -76,50 +77,8 @@ export default function Home() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-headline font-bold tracking-tight mb-6 leading-tight text-on-surface">
-            Check if your password has been{" "}
-            <span className="text-gradient-cyan">exposed</span>
-          </h1>
-
-          <p className="text-secondary text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-            Private, secure, and instant breach detection using k-anonymity. The
-            Sentinel’s Veil ensures your actual credentials never leave your
-            machine.
-          </p>
-
-          {/* Checker Input Card */}
-          <div className="relative group max-w-2xl mx-auto">
-            <div className="absolute -inset-0.5 bg-linear-to-r from-primary/30 to-tertiary/30 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000" />
-            <div className="relative bg-surface-container-high rounded-xl p-2 flex flex-col md:flex-row items-stretch gap-2">
-              <div className="grow relative">
-                <Icon name="lock" size={24} className="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" />
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  placeholder="Enter your password to check security"
-                  className="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary/50 text-on-surface py-5 pl-12 pr-4 rounded-lg placeholder:text-outline-variant font-body"
-                  disabled={loading}
-                />
-              </div>
-              {/* <button
-                onClick={handleCheck}
-                disabled={loading || !password.trim()}
-                className="bg-primary text-on-primary px-8 py-5 rounded-lg font-bold font-headline hover:shadow-[0_0_20px_rgba(0,220,229,0.3)] transition-all disabled:opacity-70 disabled:cursor-not-allowed"
-              >
-                {loading ? "Checking..." : "Check Password"}
-              </button> */}
-              <Button
-                onClick={handleCheck}
-                loading={loading}
-                loadingText="Checking..."     // ← You control what shows during loading
-                disabled={!password.trim()}
-              >
-                Check Password
-              </Button>
-            </div>
-          </div>
+          {/* Check Password */}
+          <CheckPassword password={password} setPassword={setPassword} loading={loading} handleCheck={handleCheck} handleKeyDown={handleKeyDown} />
 
           {/* Result Display */}
           <div className="mt-10 max-w-2xl mx-auto">
