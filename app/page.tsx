@@ -3,6 +3,7 @@
 import Icon, { IconName } from "@/components/comman/Icon";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Button from "@/components/ui/Button";
 import { useState } from "react";
 
 type ResultType = {
@@ -102,13 +103,21 @@ export default function Home() {
                   disabled={loading}
                 />
               </div>
-              <button
+              {/* <button
                 onClick={handleCheck}
                 disabled={loading || !password.trim()}
                 className="bg-primary text-on-primary px-8 py-5 rounded-lg font-bold font-headline hover:shadow-[0_0_20px_rgba(0,220,229,0.3)] transition-all disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {loading ? "Checking..." : "Check Password"}
-              </button>
+              </button> */}
+              <Button
+                onClick={handleCheck}
+                loading={loading}
+                loadingText="Checking..."     // ← You control what shows during loading
+                disabled={!password.trim()}
+              >
+                Check Password
+              </Button>
             </div>
           </div>
 
