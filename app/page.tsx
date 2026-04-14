@@ -357,7 +357,7 @@ export default function Home() {
               {
                 num: "02",
                 icon: "sitemap",
-                color: "tertiary",
+                color: "primary",
                 title: "Partial k-Anonymity",
                 desc: "We only send the first 5 characters of the hash. This prefix matches thousands of passwords, making identification impossible.",
                 highlight: true,
