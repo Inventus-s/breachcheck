@@ -17,7 +17,7 @@ export default function Header() {
                         API Docs
                     </Link>
                 </div>
-                <Button className="" px="5" py="2.5">
+                <Button className="px-5 py-2.5" px="5" py="2.5">
                     View API
                 </Button>
             </div>

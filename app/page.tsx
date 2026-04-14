@@ -4,6 +4,7 @@ import Icon, { IconName } from "@/components/comman/Icon";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import CheckPassword from "@/components/pages/home/CheckPassword";
+import CompromisedResult from "@/components/pages/home/CompromisedResult";
 import SafeResult from "@/components/pages/home/SafeResult";
 import Button from "@/components/ui/Button";
 import { useState } from "react";
@@ -84,6 +85,7 @@ export default function Home() {
           {checkedPassword && <CheckPassword password={password} setPassword={setPassword} loading={loading} handleCheck={handleCheck} handleKeyDown={handleKeyDown} />}
 
           {/* Safe Result */}
+          {!checkedPassword && result?.found && <CompromisedResult count={result.count} onCheckAnother={() => setCheckedPassword(true)} />}
           {!checkedPassword && !result?.found && <SafeResult onCheckAnother={() => setCheckedPassword(true)} />}
 
           {/* Result Display */}
@@ -100,7 +102,7 @@ export default function Home() {
               </div>
             )}
 
-            {result && !loading && (
+            {/* {result && !loading && (
               <>
                 {result.found ? (
                   <div className="bg-error-container border border-error/30 text-error px-6 py-5 rounded-xl text-left">
@@ -129,7 +131,7 @@ export default function Home() {
                   </div>
                 )}
               </>
-            )}
+            )} */}
           </div>
 
           {/* Trust Pills */}

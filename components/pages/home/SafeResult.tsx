@@ -61,7 +61,7 @@ export default function SafeResult({ onCheckAnother }: SafeResultProps) {
                             <div className="pt-2">
                                 <Button
                                     onClick={onCheckAnother}
-                                    className=""
+                                    className="px-8"
                                 >
                                     Check another password
                                 </Button>

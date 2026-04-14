@@ -108,6 +108,25 @@ const icons = {
             <polyline points="14 2 14 8 20 8" />
         </svg>
     ),
+
+    alertTriangle: (
+        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="currentColor" className="icon icon-tabler icons-tabler-filled icon-tabler-alert-triangle">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 1.67c.955 0 1.845 .467 2.39 1.247l.105 .16l8.114 13.548a2.914 2.914 0 0 1 -2.307 4.363l-.195 .008h-16.225a2.914 2.914 0 0 1 -2.582 -4.2l.099 -.185l8.11 -13.538a2.914 2.914 0 0 1 2.491 -1.403zm.01 13.33l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007zm-.01 -7a1 1 0 0 0 -.993 .883l-.007 .117v4l.007 .117a1 1 0 0 0 1.986 0l.007 -.117v-4l-.007 -.117a1 1 0 0 0 -.993 -.883z" />
+        </svg>
+    ),
+
+    brain: (
+        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-brain">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M15.5 13a3.5 3.5 0 0 0 -3.5 3.5v1a3.5 3.5 0 0 0 7 0v-1.8" />
+            <path d="M8.5 13a3.5 3.5 0 0 1 3.5 3.5v1a3.5 3.5 0 0 1 -7 0v-1.8" />
+            <path d="M17.5 16a3.5 3.5 0 0 0 0 -7h-.5" />
+            <path d="M19 9.3v-2.8a3.5 3.5 0 0 0 -7 0" />
+            <path d="M6.5 16a3.5 3.5 0 0 1 0 -7h.5" />
+            <path d="M5 9.3v-2.8a3.5 3.5 0 0 1 7 0v10" />
+        </svg>
+    ),
 } as const;
 
 interface IconProps {

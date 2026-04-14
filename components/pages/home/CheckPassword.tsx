@@ -36,7 +36,7 @@ function CheckPassword({ password, setPassword, loading, handleCheck, handleKeyD
                         loading={loading}
                         loadingText="Checking..."     // ← You control what shows during loading
                         disabled={!password.trim()}
-                        px="9"
+                        className="px-8"
                     >
                         Check Password
                     </Button>
