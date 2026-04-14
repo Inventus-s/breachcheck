@@ -7,7 +7,7 @@ export default function Footer() {
                         BreachCheck
                     </div>
                     <p className="font-body text-sm text-slate-400">
-                        © 2026 BreachCheck. Privacy-first password security.
+                        © {new Date().getFullYear()} BreachCheck. Privacy-first password security.
                     </p>
                 </div>
 
