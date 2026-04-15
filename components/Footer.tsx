@@ -11,12 +11,12 @@ export default function Footer() {
                     </p>
                 </div>
 
-                <div className="flex flex-wrap gap-x-8 gap-y-4 md:justify-end">
+                {/* <div className="flex flex-wrap gap-x-8 gap-y-4 md:justify-end">
                     <a className="text-sm text-slate-500 hover:text-cyan-400">Privacy</a>
                     <a className="text-sm text-slate-500 hover:text-cyan-400">Terms</a>
                     <a className="text-sm text-slate-500 hover:text-cyan-400">Security</a>
                     <a className="text-sm text-slate-500 hover:text-cyan-400">API Status</a>
-                </div>
+                </div> */}
             </div>
         </footer>
     );
